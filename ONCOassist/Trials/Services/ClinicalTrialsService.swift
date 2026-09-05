@@ -69,4 +69,72 @@ class ClinicalTrialsService {
             nextPageToken: result.nextPageToken
         )
     }
+    func fetchTrialDetails(nctId: String) async throws -> TrialDetails {
+
+        let url = URL(
+            string: "https://clinicaltrials.gov/api/v2/studies/\(nctId)"
+        )!
+
+        let (data, response) = try await URLSession.shared.data(
+            from: url
+        )
+
+        guard let response = response as? HTTPURLResponse,
+              response.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+
+        let result = try JSONDecoder().decode(
+            Study.self,
+            from: data
+        )
+
+        let section = result.protocolSection
+
+        let location = section.contactsLocationsModule?.locations?.first
+
+        return TrialDetails(
+            nctId: section.identificationModule?.nctId ?? "N/A",
+            briefTitle: section.identificationModule?.briefTitle
+                ?? "Title unavailable",
+            officialTitle: section.identificationModule?.officialTitle
+                ?? "Not available",
+            status: section.statusModule?.overallStatus
+                ?? "Status unavailable",
+            phase: section.designModule?.phases?.first
+                ?? "NA",
+            studyType: section.designModule?.studyType
+                ?? "Not available",
+            sponsor: section.sponsorCollaboratorsModule?.leadSponsor?.name
+                ?? "Sponsor unavailable",
+            summary: section.descriptionModule?.briefSummary
+                ?? "No summary available",
+            detailedDescription: section.descriptionModule?.detailedDescription
+                ?? "No detailed description available",
+            conditions: section.conditionsModule?.conditions
+                ?? [],
+            sex: section.eligibilityModule?.sex
+                ?? "Not available",
+            minimumAge: section.eligibilityModule?.minimumAge
+                ?? "Not available",
+            healthyVolunteers: section.eligibilityModule?.healthyVolunteers == true
+                ? "Yes"
+                : "No",
+            enrollment: section.designModule?.enrollmentInfo?.count.map {
+                String($0)
+            } ?? "Not available",
+            startDate: section.statusModule?.startDateStruct?.date
+                ?? "Not available",
+            completionDate: section.statusModule?.completionDateStruct?.date
+                ?? "Not available",
+            location: [
+                location?.facility,
+                location?.city,
+                location?.state,
+                location?.country
+            ]
+            .compactMap { $0 }
+            .joined(separator: ", ")
+        )
+    }
 }

@@ -25,7 +25,7 @@ struct ClinicalTrialsView: View {
                     HStack {
 
                         Text("Clinical Trials")
-                            .font(.largeTitle)
+                            .font(.title)
                             .fontWeight(.bold)
 
                         Spacer()
@@ -132,7 +132,7 @@ struct ClinicalTrialsView: View {
                                 ForEach(viewModel.trials,id: \.nctId) { trial in
 
                                     NavigationLink {
-                                        MASCCView()
+                                        TrialDetailView(NCTId:trial.nctId)
                                     } label: {
 
                                         HStack(alignment: .top,spacing: 10) {
