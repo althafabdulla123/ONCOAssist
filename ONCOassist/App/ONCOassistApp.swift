@@ -11,7 +11,7 @@ import SwiftUI
 struct ONCOAssistApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("ONCOAssist")
+            DualTabView()
         }
     }
 }
