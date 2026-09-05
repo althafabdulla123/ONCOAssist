@@ -24,6 +24,8 @@ class MASCCViewModel: ObservableObject {
         selectedOptions = Array(repeating: nil, count: criteria.count)
     }
     
+    nonisolated deinit {}
+    
     func calculateScore() {
         guard answeredAll() else {
             errorMessage = "Please answer all questions before calculating."

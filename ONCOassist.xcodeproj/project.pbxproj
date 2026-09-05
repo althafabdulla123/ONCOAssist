@@ -29,10 +29,36 @@
 		B933D040304BA6BE005D896F /* ONCOassistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ONCOassistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B933D0B0304BD3EB005D896F /* Exceptions for "ONCOassistUnitTests" folder in "ONCOassist" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MASCCViewModelTests.swift,
+			);
+			target = B933D023304BA6BC005D896F /* ONCOassist */;
+		};
+		B933D0B1304BD3EB005D896F /* Exceptions for "ONCOassistUnitTests" folder in "ONCOassistTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MASCCViewModelTests.swift,
+			);
+			target = B933D035304BA6BE005D896F /* ONCOassistTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B933D026304BA6BC005D896F /* ONCOassist */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ONCOassist;
+			sourceTree = "<group>";
+		};
+		B933D0AC304BD374005D896F /* ONCOassistUnitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B933D0B0304BD3EB005D896F /* Exceptions for "ONCOassistUnitTests" folder in "ONCOassist" target */,
+				B933D0B1304BD3EB005D896F /* Exceptions for "ONCOassistUnitTests" folder in "ONCOassistTests" target */,
+			);
+			path = ONCOassistUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -66,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				B933D026304BA6BC005D896F /* ONCOassist */,
+				B933D0AC304BD374005D896F /* ONCOassistUnitTests */,
 				B933D025304BA6BC005D896F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +124,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				B933D026304BA6BC005D896F /* ONCOassist */,
+				B933D0AC304BD374005D896F /* ONCOassistUnitTests */,
 			);
 			name = ONCOassist;
 			packageProductDependencies = (
@@ -444,9 +472,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R7Z4B93UR6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = machineTest.ONCOassistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -466,9 +495,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R7Z4B93UR6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = machineTest.ONCOassistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +519,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7Z4B93UR6;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = machineTest.ONCOassistUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +540,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7Z4B93UR6;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = machineTest.ONCOassistUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
