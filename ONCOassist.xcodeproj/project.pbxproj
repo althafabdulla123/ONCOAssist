@@ -33,14 +33,18 @@
 		B933D0B0304BD3EB005D896F /* Exceptions for "ONCOassistUnitTests" folder in "ONCOassist" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ClinicalTrialsServiceTests.swift,
 				MASCCViewModelTests.swift,
+				sample_trials.json,
 			);
 			target = B933D023304BA6BC005D896F /* ONCOassist */;
 		};
 		B933D0B1304BD3EB005D896F /* Exceptions for "ONCOassistUnitTests" folder in "ONCOassistTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ClinicalTrialsServiceTests.swift,
 				MASCCViewModelTests.swift,
+				sample_trials.json,
 			);
 			target = B933D035304BA6BE005D896F /* ONCOassistTests */;
 		};

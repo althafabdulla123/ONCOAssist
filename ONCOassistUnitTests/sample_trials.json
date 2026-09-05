@@ -1,0 +1,26 @@
+{
+    "studies": [
+        {
+            "protocolSection": {
+                "identificationModule": {
+                    "nctId": "NCT12345678",
+                    "briefTitle": "A Study of Treatment for Lung Cancer"
+                },
+                "statusModule": {
+                    "overallStatus": "RECRUITING"
+                },
+                "designModule": {
+                    "phases": [
+                        "PHASE2"
+                    ]
+                },
+                "sponsorCollaboratorsModule": {
+                    "leadSponsor": {
+                        "name": "Example Cancer Institute"
+                    }
+                }
+            }
+        }
+    ],
+    "nextPageToken": null
+}
