@@ -10,6 +10,10 @@ import SwiftUI
 struct DualTabView: View {
     var body: some View {
         TabView {
+            ClinicalTrialsView()
+                .tabItem {
+                    Label("Trials", systemImage: "list.bullet.rectangle")
+                }
             MASCCView()
                 .tabItem {
                     Label("MASCC", systemImage: "stethoscope")
